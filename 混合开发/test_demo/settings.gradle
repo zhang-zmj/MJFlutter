@@ -1,0 +1,15 @@
+
+include ':app'
+rootProject.name = "test_demo"
+
+
+setBinding(new Binding([gradle: this]))
+evaluate(new File(
+        settingsDir.parentFile,
+        //flutter_module即为创建的模块名称
+        'my_futter/.android/include_flutter.groovy'
+))
+
+
+include ':my_futter'
+project(':my_futter').projectDir = new File('../my_futter')
