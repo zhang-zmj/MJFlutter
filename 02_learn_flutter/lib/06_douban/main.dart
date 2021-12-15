@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './06_douban/pages/main/ZMJMainPage.dart';
+import 'pages/main/ZMJMainPage.dart';
 
 main() => runApp(MyApp());
 
@@ -9,22 +9,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Flutter Demo",
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        splashColor: Colors.transparent
+        primarySwatch: Colors.green,
+        splashColor: Colors.transparent,
+        highlightColor: Colors.transparent
       ),
       home: ZMJMainPage(),
     );
   }
 }
-
-
-
-
-
-
-
-
-
 
 
 
