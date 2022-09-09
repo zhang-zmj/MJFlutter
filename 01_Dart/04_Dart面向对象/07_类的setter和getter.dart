@@ -1,4 +1,4 @@
-main(List<String> args) {
+void main(List<String> args) {
   final p = Person();
 
   //直接访问属性

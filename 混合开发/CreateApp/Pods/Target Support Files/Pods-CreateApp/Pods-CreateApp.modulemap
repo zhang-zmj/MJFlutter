@@ -1,6 +1,0 @@
-framework module Pods_CreateApp {
-  umbrella header "Pods-CreateApp-umbrella.h"
-
-  export *
-  module * { export * }
-}

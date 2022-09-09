@@ -1,4 +1,4 @@
-main(List<String> args) {
+void main(List<String> args) {
   Future.value("哈哈哈哈哈").then((value) {
     print(value);
   });

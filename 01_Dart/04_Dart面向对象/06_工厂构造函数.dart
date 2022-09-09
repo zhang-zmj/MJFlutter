@@ -1,6 +1,6 @@
-main(List<String> args) {
+void main(List<String> args) {
   final p1 = Person.withName("why");
-  final p2 = Person.withName("why");
+  final p2 = Person.withName("zmj");
   print(identical(p1, p2));
 }
 

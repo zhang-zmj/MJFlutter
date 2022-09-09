@@ -1,6 +1,6 @@
 import 'dart:io';
 
-main(List<String> args) {
+void main(List<String> args) {
   print("main start");
 
   getNetworkData().then((res) {

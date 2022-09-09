@@ -1,11 +1,10 @@
 import 'dart:isolate';
 
-main(List<String> args) {
+void main(List<String> args) {
   print("main start");
 
-//isolate：是有自己的内存和单线程控制的运行实体
+//isolate：具有自己的私有内存块和一个运行事件循环的单个线程
   Isolate.spawn(calculate, 100);
-
   print("main end");
 }
 
