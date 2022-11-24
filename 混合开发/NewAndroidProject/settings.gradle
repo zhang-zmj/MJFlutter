@@ -1,0 +1,26 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+
+rootProject.name = "NewAndroidProject"
+include ':app'
+
+
+setBinding(new Binding([gradle: this]))
+evaluate(new File(
+        settingsDir,
+        "../my_flutter/.android/include_flutter.groovy"
+))
+

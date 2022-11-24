@@ -161,5 +161,23 @@ class _BiliAppState extends State<BiliApp> {
 
 
 
+class MyPage extends Page {
+  const MyPage({
+    LocalKey key,
+    String name,
+  }) : super(
+    key: key,
+    name: name,
+  );
+
+  Route createRoute(BuildContext context) {
+    return MaterialPageRoute(
+      settings: this,
+      builder: (BuildContext context) {
+        return MyHomePage(title: 'Route: ${name}');
+      },
+    );
+  }
+}
 
 

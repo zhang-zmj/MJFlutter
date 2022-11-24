@@ -26,7 +26,7 @@ class ZMJHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("测试Demo"),
       ),
-      body: SelectDoneWidget()
+      body: Text("测试Demo"),
     );
   }
 }
