@@ -1,26 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 
-
 /*
-*  GestureDetector内部是使用一个或多个GestureRecognizer来识别各种手势的
-*  GestureRecognizer是一个抽象类，一种手势的识别器对应一个GestureRecognizer的子类
+  ‌Flutter中的GestureRecognizer有多种类型，主要包括以下几种‌：
+    * ‌TapGestureRecognizer‌：用于检测轻触手势。
+    * ‌DoubleTapGestureRecognizer‌：用于检测双击手势。
+    * ‌LongPressGestureRecognizer‌：用于检测长按手势。
+    * ‌VerticalDragGestureRecognizer‌：用于检测垂直拖动手势。
+    * ‌HorizontalDragGestureRecognizer‌：用于检测水平拖动手势。
+    * ‌PanGestureRecognizer‌：用于检测移动拖动手势。
+    * ScaleGestureRecognizer‌：用于检测缩放手势。
+    * ‌ForcePressGestureRecognizer‌：用于检测压力手势。
+    * ‌MultiTapGestureRecognizer‌：用于检测多次点击手势。
+    * ‌MultiDragGestureRecognizer‌：用于检测多指拖拽手势，包括水平、垂直、延迟、立即等多种变体。
 */
 
 class GestureRecognizerWidget extends StatefulWidget {
   const GestureRecognizerWidget({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<GestureRecognizerWidget> createState() => _GestureRecognizerWidgetState();
 }
 
 class _GestureRecognizerWidgetState extends State<GestureRecognizerWidget> {
-
   final TapGestureRecognizer _tapGestureRecognizer = TapGestureRecognizer();
   bool _toggle = false; //变色开关
-
 
   @override
   void dispose() {
@@ -32,27 +38,22 @@ class _GestureRecognizerWidgetState extends State<GestureRecognizerWidget> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text.rich(
-          TextSpan(
-              children: [
-                TextSpan(text: "你好世界"),
-                TextSpan(
-                    text: "点我变色",
-                    style: TextStyle(
-                      fontSize: 30.0,
-                      color: _toggle ? Colors.blue : Colors.red,
-                    ),
-                    recognizer: _tapGestureRecognizer
-                      ..onTap = () {
-                        setState(() {
-                          _toggle = !_toggle;
-                        });
-                      }
-                ),
-                TextSpan(text: "你好世界"),
-              ]
-          )
-      ),
+      child: Text.rich(TextSpan(children: [
+        const TextSpan(text: "你好世界"),
+        TextSpan(
+            text: "点我变色",
+            style: TextStyle(
+              fontSize: 30.0,
+              color: _toggle ? Colors.blue : Colors.red,
+            ),
+            recognizer: _tapGestureRecognizer
+              ..onTap = () {
+                setState(() {
+                  _toggle = !_toggle;
+                });
+              }),
+        const TextSpan(text: "你好世界"),
+      ])),
     );
   }
 }

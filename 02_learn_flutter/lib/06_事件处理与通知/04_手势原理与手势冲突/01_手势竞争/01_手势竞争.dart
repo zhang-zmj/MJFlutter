@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-
 /*
 如果对一个组件同时监听水平和垂直方向的拖动手势，当我们斜着拖动时哪个方向的拖动手势回调会被触发？
    实际上取决于第一次移动时两个轴上的位移分量，哪个轴的大，哪个轴在本次滑动事件竞争中就胜出
 */
-class BothDirectionWidget extends StatefulWidget {
-  const BothDirectionWidget({Key? key}) : super(key: key);
+
+class MJBothDirectionWidget extends StatefulWidget {
+  const MJBothDirectionWidget({super.key});
+
   @override
-  State<BothDirectionWidget> createState() => _BothDirectionWidgetState();
+  State<MJBothDirectionWidget> createState() => _MJBothDirectionWidgetState();
 }
 
-class _BothDirectionWidgetState extends State<BothDirectionWidget> {
-
+class _MJBothDirectionWidgetState extends State<MJBothDirectionWidget> {
   double _top = 0.0;
   double _left = 0.0;
 
@@ -24,26 +24,20 @@ class _BothDirectionWidgetState extends State<BothDirectionWidget> {
             top: _top,
             left: _left,
             child: GestureDetector(
-              child: CircleAvatar(child: Text("A")),
+              child: const CircleAvatar(child: Text("A")),
               //垂直方向拖动事件
-              onVerticalDragUpdate: (DragUpdateDetails details){
+              onVerticalDragUpdate: (DragUpdateDetails details) {
                 setState(() {
                   _top += details.delta.dy;
                 });
               },
-              onHorizontalDragUpdate: (DragUpdateDetails details){
+              onHorizontalDragUpdate: (DragUpdateDetails details) {
                 setState(() {
                   _left += details.delta.dx;
                 });
               },
-            )
-        )
+            ))
       ],
     );
   }
 }
-
-
-
-
-

@@ -13,33 +13,13 @@ void main(List<String> args) {
 }
 
 Future getData() async {
-/*
-
-  getNetworkData("argument1").then((value){
-
-    print(value);
-    return getNetworkData(value);
-
-  }).then((value){
-
-      print(value);
-      return getNetworkData(value);
-
-  }).then((value){
-
-    print(value);
-
-  });
-
-*/
-
   var value1 = await getNetWorkData("argument1");
   print(value1);
 
-  var value2 = await getNetWorkData(value1);
+  var value2 = await getNetWorkData("hello world");
   print(value2);
 
-  var value3 = await getNetWorkData(value2);
+  var value3 = await getNetWorkData("zhangmj");
   print(value3);
 
   return value3;
@@ -48,6 +28,6 @@ Future getData() async {
 Future getNetWorkData(String arg) async {
   return Future(() {
     sleep(Duration(seconds: 3));
-    return "hello world";
+    return arg;
   });
 }

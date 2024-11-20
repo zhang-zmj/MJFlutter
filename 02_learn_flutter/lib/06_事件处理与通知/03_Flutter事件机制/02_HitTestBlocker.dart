@@ -3,14 +3,7 @@ import 'package:flutter/rendering.dart';
 
 // 可以拦截 hitTest 各个过程的 HitTestBlocker 组件
 class HitTestBlocker extends SingleChildRenderObjectWidget {
-
-  HitTestBlocker({
-    Key? key,
-    this.up = true,
-    this.down = false,
-    this.self = false,
-    Widget? child
-  }) : super(key: key, child: child);
+  const HitTestBlocker({super.key, this.up = true, this.down = false, this.self = false, super.child});
 
   // up 为 true 时 , `hitTest()` 将会一直返回 false.
   final bool up;
@@ -29,16 +22,14 @@ class HitTestBlocker extends SingleChildRenderObjectWidget {
   @override
   void updateRenderObject(BuildContext context, RenderHitTestBlocker renderObject) {
     renderObject
-    ..up = up
-        ..down = down
-        ..self = self;
+      ..up = up
+      ..down = down
+      ..self = self;
   }
 }
 
-
 class RenderHitTestBlocker extends RenderProxyBox {
-
-  RenderHitTestBlocker({this.up = true,  this.down = true, this.self = true});
+  RenderHitTestBlocker({this.up = true, this.down = true, this.self = true});
 
   bool up;
   bool down;
@@ -46,7 +37,6 @@ class RenderHitTestBlocker extends RenderProxyBox {
 
   @override
   bool hitTest(BoxHitTestResult result, {required Offset position}) {
-
     bool hitTestDownResult = false;
     if (!down) {
       hitTestDownResult = hitTestChildren(result, position: position);
@@ -61,19 +51,5 @@ class RenderHitTestBlocker extends RenderProxyBox {
   }
 
   @override
-  bool hitTestSelf(Offset position)  => self;
-
-
+  bool hitTestSelf(Offset position) => self;
 }
-
-
-
-
-
-
-
-
-
-
-
-

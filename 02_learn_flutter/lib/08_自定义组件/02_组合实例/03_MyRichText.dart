@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class MyRichText extends StatefulWidget {
   const MyRichText({
-    Key? key,
+    super.key,
     this.text,
     this.linkStyle
-  }) : super(key: key);
+  });
 
   final String? text;
   final TextStyle? linkStyle;
@@ -29,7 +29,7 @@ class _MyRichTextState extends State<MyRichText> {
     // 耗时操作：解析文本字符串，构建出TextSpan。
     // 省略具体实现。
 
-    return TextSpan();
+    return const TextSpan();
 
   }
 

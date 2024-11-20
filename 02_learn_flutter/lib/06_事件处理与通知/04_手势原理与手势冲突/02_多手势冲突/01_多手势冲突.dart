@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 */
 
 class GestureConflictWidget extends StatefulWidget {
-  const GestureConflictWidget({Key? key}) : super(key: key);
+  const GestureConflictWidget({super.key});
 
   @override
   State<GestureConflictWidget> createState() => _GestureConflictWidgetState();
@@ -22,30 +22,23 @@ class _GestureConflictWidgetState extends State<GestureConflictWidget> {
             left: _left,
             child: GestureDetector(
               //要拖动和点击的widget
-              child: CircleAvatar(child: Text("A")),
+              child: const CircleAvatar(child: Text("A")),
               onHorizontalDragUpdate: (DragUpdateDetails details) {
                 setState(() {
-                  _left  += details.delta.dx;
+                  _left += details.delta.dx;
                 });
               },
-              onHorizontalDragEnd: (details){
-                print("onHorizontalDragEnd");
+              onHorizontalDragEnd: (details) {
+                debugPrint("onHorizontalDragEnd");
               },
-              onTapDown: (details){
-                print("down");
+              onTapDown: (details) {
+                debugPrint("down");
               },
-              onTapUp: (details){
-                print("up");
+              onTapUp: (details) {
+                debugPrint("up");
               },
-            )
-        )
+            ))
       ],
     );
   }
 }
-
-
-
-
-
-

@@ -11,14 +11,14 @@ import '02_RenderObjectAnimationMixin.dart';
 
 class CustomCheckbox extends LeafRenderObjectWidget {
   const CustomCheckbox({
-    Key? key,
+    super.key,
     this.strokeWidth = 2.0,
     this.value = false,
     this.strokeColor = Colors.white,
     this.fillColor = Colors.blue,
     this.radius = 2.0,
     this.onChanged,
-  }) : super(key: key);
+  });
 
   final double strokeWidth; // “勾”的线条宽度
   final Color strokeColor; // “勾”的线条宽度

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-
 class GestureConflictWidget extends StatefulWidget {
-  const GestureConflictWidget({Key? key}) : super(key: key);
+  const GestureConflictWidget({super.key});
   @override
   State<GestureConflictWidget> createState() => _GestureConflictWidgetState();
 }
@@ -17,33 +16,25 @@ class _GestureConflictWidgetState extends State<GestureConflictWidget> {
             top: 80,
             left: _leftB,
             child: Listener(
-              onPointerDown: (details){
-                print("down");
+              onPointerDown: (details) {
+                debugPrint("down");
               },
-              onPointerUp: (details){
+              onPointerUp: (details) {
                 //会触发
-                print("up");
+                debugPrint("up");
               },
               child: GestureDetector(
-                child: CircleAvatar(child: Text("B")),
-                onHorizontalDragUpdate: (DragUpdateDetails details) {
-                  setState(() {
-                    _leftB  += details.delta.dx;
-                  });
-                },
-                onHorizontalDragEnd: (details){
-                  print("onHorizontalDragEnd");
-                }
-              ),
-            )
-        )
+                  child: const CircleAvatar(child: Text("B")),
+                  onHorizontalDragUpdate: (DragUpdateDetails details) {
+                    setState(() {
+                      _leftB += details.delta.dx;
+                    });
+                  },
+                  onHorizontalDragEnd: (details) {
+                    debugPrint("onHorizontalDragEnd");
+                  }),
+            ))
       ],
     );
   }
 }
-
-
-
-
-
-

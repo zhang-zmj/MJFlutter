@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 class TurnBox extends StatefulWidget {
   const TurnBox({
-    Key? key,
+    super.key,
     this.turns = .0, //旋转的“圈”数,一圈为360度，如0.25圈即90度
     this.speed = 200, //过渡动画执行的总时长
     this.child
-  }) : super(key: key);
+  });
 
   final double turns;
   final int speed;

@@ -8,7 +8,7 @@ import 'dart:math';
 */
 class GradientCircularProgressIndicator extends StatelessWidget {
   const GradientCircularProgressIndicator({
-    Key? key,
+    super.key,
     this.strokeWidth = 2.0,
     required this.radius,
     required this.colors,
@@ -17,7 +17,7 @@ class GradientCircularProgressIndicator extends StatelessWidget {
     this.strokeCapRound = false,
     this.backgroundColor = const Color(0xFFEEEEEE),
     this.totalAngle = 2 * pi,
-  }) : super(key: key);
+  });
 
 
   ///粗细

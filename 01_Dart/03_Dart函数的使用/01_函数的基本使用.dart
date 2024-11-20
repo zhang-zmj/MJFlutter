@@ -14,10 +14,10 @@ int sum(int num1, int num2) {
   return num1 + num2;
 }
 
-String printUserInfo(){
+String printUserInfo() {
   return "this is str";
 }
 
-List getList(){
+List getList() {
   return ["111", "222", "333"];
 }

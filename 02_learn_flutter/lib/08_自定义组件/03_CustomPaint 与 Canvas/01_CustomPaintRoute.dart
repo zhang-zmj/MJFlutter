@@ -13,7 +13,7 @@ import 'package:flutter/material.dart';
 */
 
 class CustomPaintRoute extends StatelessWidget {
-  const CustomPaintRoute({Key? key}) : super(key: key);
+  const CustomPaintRoute({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +22,12 @@ class CustomPaintRoute extends StatelessWidget {
           children: [
             RepaintBoundary(
               child: CustomPaint(
-                size: Size(300, 300),
+                size: const Size(300, 300),
                 painter: MyPainter(),
               )
             ),
             //添加一个刷新button
-            ElevatedButton(onPressed: () {}, child: Text("刷新"))
+            ElevatedButton(onPressed: () {}, child: const Text("刷新"))
           ],
         )
       ,
@@ -39,7 +39,7 @@ class CustomPaintRoute extends StatelessWidget {
 class MyPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    print('paint');
+    debugPrint('paint');
     var rect = Offset.zero & size;
     //画棋盘
     drawChessboard(canvas, rect);
@@ -59,7 +59,7 @@ class MyPainter extends CustomPainter {
     var paint = Paint()
         ..isAntiAlias = true
         ..style = PaintingStyle.fill //填充
-        ..color = Color(0xFFDCC48C);
+        ..color = const Color(0xFFDCC48C);
     canvas.drawRect(rect, paint);
 
     //画棋盘网格

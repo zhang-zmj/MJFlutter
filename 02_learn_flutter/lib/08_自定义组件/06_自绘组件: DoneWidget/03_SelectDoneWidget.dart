@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '02_DoneWidget.dart';
 
 class SelectDoneWidget extends StatefulWidget {
-  const SelectDoneWidget({Key? key}) : super(key: key);
+  const SelectDoneWidget({super.key});
 
   @override
   State<SelectDoneWidget> createState() => _SelectDoneWidgetState();
@@ -20,7 +20,7 @@ class _SelectDoneWidgetState extends State<SelectDoneWidget> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           _getSelectWidget(2, Colors.blue, true),
-          Text("操作成功"),
+          const Text("操作成功"),
           _getSelectWidget(2, Colors.green, false),
         ]
       ),

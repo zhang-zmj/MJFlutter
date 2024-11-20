@@ -15,7 +15,7 @@ class Person {
   late String name;
 
   //setter方法
-  set setName(String name) => this.name = name;
+  void set setName(String name) => this.name = name;
   //getter方法
   String get getName => name;
 }

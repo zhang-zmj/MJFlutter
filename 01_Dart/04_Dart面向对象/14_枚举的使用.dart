@@ -1,3 +1,5 @@
+enum Colors { red, blue, green }
+
 void main(List<String> args) {
   final color = Colors.red;
   switch (color) {
@@ -17,5 +19,3 @@ void main(List<String> args) {
   print(Colors.values);
   print(Colors.green.index);
 }
-
-enum Colors { red, blue, green }

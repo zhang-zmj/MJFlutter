@@ -1,27 +1,22 @@
-import 'dart:io';
-
+// import 'dart:io'
 void main(List<String> args) {
-  print("main start");
+  //1、 Future的构造方法， 执行的优先级如下： sync > microtask > Future = delayed
+  // Future(() => print('Future异步方法'));
+  // Future.delayed(Duration(seconds: 3), () => print('delayed异步方法'));
+  // Future.microtask(() => print('microtask异步方法'));
+  // Future.sync(() => print('sync同步方法'));
 
+  //2、Future的使的简单使用
   var result = getNetworkData();
   result.then((value) {
     print(value);
   }).catchError((error) {
-    print("执行catchError代码：$error -------");
-  }).whenComplete(() {
-    print("代码执行完成");
+    print(error);
   });
-
-  print("main end");
 }
 
 //发送一个网络请求
 Future getNetworkData() {
-  //1、只要有返回结果，就会执行Futrue对应的then的回调
-  //2、如果没有结果返回(有错误信息)，需要在Futrue回调中抛出一个异常
-  return Future(() {
-    sleep(Duration(seconds: 2));
-    //  return "hello world";
-    throw Exception("我是错误信息");
-  });
+  // return Future.value('value异步方法');
+  return Future.error('error异步方法');
 }

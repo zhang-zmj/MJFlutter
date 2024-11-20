@@ -13,11 +13,16 @@ class Animal {
   }
 }
 
+/*
+  1、继承使用 extends 关键字
+  2、如果重载父类的方法时，需要调用父类的方法，使用 super 关键字
+*/
 class Person extends Animal {
   String name;
   late String sex;
   Person(this.name, int age, String sex) : super(age) {
     this.sex = sex;
+    this.name = name;
   }
   @override
   work() {

@@ -2,8 +2,6 @@ void main(List<String> args) {
   Person.courseTime = "8:30";
   print(Person.courseTime);
   Person.gotoCourse();
-
-  
 }
 
 class Person {

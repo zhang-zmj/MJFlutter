@@ -28,3 +28,7 @@ class MemoryCache<T> implements Cache<T> {
     print("我是内存缓存 把key=${key} value=${value}的数据写到内存中");
   }
 }
+
+class Student {}
+
+class Room<T extends Student> {}

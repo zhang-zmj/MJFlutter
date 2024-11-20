@@ -75,13 +75,13 @@ class RenderDoneObject extends RenderBox with RenderObjectAnimationMixin {
           rect.top + rect.height / 3.5
       );
 
-      final _lastOffset = Offset.lerp(
+      final lastOffset0 = Offset.lerp(
           secondOffset,
           lastOffset,
           (progress - adjustProgress) / (1 - adjustProgress)
       )!;
 
-      path.lineTo(_lastOffset.dx, _lastOffset.dy);
+      path.lineTo(lastOffset0.dx, lastOffset0.dy);
 
     }
 

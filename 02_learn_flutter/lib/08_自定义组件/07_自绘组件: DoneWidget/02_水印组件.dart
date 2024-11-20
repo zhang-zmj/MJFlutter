@@ -3,11 +3,7 @@ import '01_水印画笔.dart';
 import 'dart:ui' as ui;
 
 class WaterMark extends StatefulWidget {
-  const WaterMark({
-    Key? key,
-    this.repeat = ImageRepeat.repeat,
-    required this.painter
-  }) : super(key: key);
+  const WaterMark({super.key, this.repeat = ImageRepeat.repeat, required this.painter});
 
   //单元水印画笔
   final WaterMarkPainter painter;
@@ -17,11 +13,9 @@ class WaterMark extends StatefulWidget {
 
   @override
   State<WaterMark> createState() => _WaterMarkState();
-
 }
 
 class _WaterMarkState extends State<WaterMark> {
-
   late Future<MemoryImage> _memoryImageFuture;
 
   @override
@@ -33,7 +27,8 @@ class _WaterMarkState extends State<WaterMark> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox.expand( // 水印尽可能大
+    return SizedBox.expand(
+      // 水印尽可能大
       child: FutureBuilder(
         future: _memoryImageFuture,
         builder: (BuildContext context, AsyncSnapshot snapshot) {
@@ -70,7 +65,6 @@ class _WaterMarkState extends State<WaterMark> {
     super.didUpdateWidget(oldWidget);
   }
 
-
   // 离屏绘制单元水印并将绘制结果保存为图片缓存起来
   Future<MemoryImage> _getWaterMarkImage() async {
     // 创建一个 Canvas 进行离屏绘制，细节和原理请查看本书后面关于Flutter绘制原理相关章节
@@ -86,15 +80,10 @@ class _WaterMarkState extends State<WaterMark> {
     return MemoryImage(pngBytes);
   }
 
-
   @override
   void dispose() {
     //释放图片缓存
     _memoryImageFuture.then((value) => value.evict());
     super.dispose();
   }
-
-
 }
-
-
